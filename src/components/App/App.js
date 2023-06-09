@@ -1,5 +1,6 @@
 import logo from '../../logo.svg';
 import './App.css';
+import { getDataFromServer } from '../../data/getData'
 
 const App = () => {
 	return (
@@ -12,11 +13,17 @@ const App = () => {
 				<a
 					className="App-link"
 					href="https://reactjs.org"
-					target="_blank"
-					rel="noopener noreferrer"
 				>
 					Start
 				</a>
+				<table>
+					<thead>
+						<tr>Name</tr>
+					</thead>
+					<tbody>
+						<td>her</td>
+					</tbody>
+				</table>
 			</header>
 		</div>
 	)
