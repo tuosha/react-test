@@ -1,3 +1,4 @@
+import { _baseUrl, _personUrl } from './urlsList'
 
 const getDataFromServer = async (url) => {
 	const response = await fetch(url)
@@ -6,7 +7,11 @@ const getDataFromServer = async (url) => {
 	}
 	return response.json()
 }
-
+const getPerson = async (id) => {
+	const person = await getDataFromServer(`${_personUrl + id}`)
+	return person.json()
+}
 export {
-	getDataFromServer
+	getDataFromServer,
+    getPerson
 }
