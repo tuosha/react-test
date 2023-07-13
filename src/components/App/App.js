@@ -3,27 +3,32 @@ import './App.css';
 
 const App = () => {
 	return (
-		<div className="App">
-			<header className="App-header">
-				<img src={logo} className="App-logo" alt="logo"/>
+		<div className="app">
+			<header className="app-header">
+				<img src={logo} className="app-header__logo" alt="logo"/>
 				<p>
 					Edit <code>src/App.js</code> and save to reload.
 				</p>
 				<a
-					className="App-link"
+					className="app-link"
 					href="https://reactjs.org"
 				>
 					Start
 				</a>
-				<table>
-					<thead>
-						<tr>Name</tr>
-					</thead>
-					<tbody>
-						<td>her</td>
-					</tbody>
-				</table>
 			</header>
+			<body className="app-body">
+			<ul>
+				<li>
+					one
+				</li>
+				<li>
+					two
+				</li>
+			</ul>
+			</body>
+			<footer className="app-footer">
+
+			</footer>
 		</div>
 	)
 }
