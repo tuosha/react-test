@@ -1,12 +1,12 @@
 export const BaseTable = (data) => {
-	return (
-	  <table>
-		<thead>
+    return (
+      <table>
+          <thead>
 
-		</thead>
-		<tbody>
+          </thead>
+          <tbody>
 
-		</tbody>
-	</table>
-	)
+          </tbody>
+      </table>
+    )
 }
