@@ -1,11 +1,11 @@
-const _baseUrl = 'https://swapi.dev/api/'
-const _personUrl = `${_baseUrl} + /people/`
-const _starshipsUrl = `${_baseUrl} + /starships/`
+const _baseApiUrl = 'https://swapi.dev/api'
+const _personsUrl = /people/
+const _starshipsUrl = /starships/
 const _baseImageUrl = 'https://starwars-visualguide.com/assets/img'
 
 export {
-    _baseUrl,
-    _personUrl,
+    _baseApiUrl,
+    _personsUrl,
     _starshipsUrl,
     _baseImageUrl,
 }
