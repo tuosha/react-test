@@ -17,14 +17,7 @@ const App = () => {
               </a>
           </header>
           <body className="app-body">
-          <ul>
-              <li>
-                  one
-              </li>
-              <li>
-                  two
-              </li>
-          </ul>
+
           </body>
           <footer className="app-footer">
 
