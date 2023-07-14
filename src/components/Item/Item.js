@@ -1,9 +1,8 @@
-
 export const Item = (data) => {
-	const item = data;
-	return (
-		<>
-			<p>item.id</p>
-		</>
-	)
+    const item = data
+    return (
+      <>
+          <p>item.id</p>
+      </>
+    )
 }
