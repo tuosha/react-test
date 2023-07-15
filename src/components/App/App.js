@@ -1,9 +1,10 @@
 import logo from '../../logo.svg'
 import './App.css'
+import PersonsList from '../PersonsList/PersonsList'
 
 const App = () => {
     return (
-      <div className="app">
+        <>
           <header className="app-header">
               <img src={logo} className="app-header__logo" alt="logo"/>
               <p>
@@ -16,13 +17,12 @@ const App = () => {
                   Start
               </a>
           </header>
-          <body className="app-body">
-
+          <body>
+			<PersonsList/>
           </body>
           <footer className="app-footer">
-
           </footer>
-      </div>
+      </>
     )
 }
 export default App

@@ -5,7 +5,7 @@ const _extractId = (item) => {
 
 const _trasformPersonData = (person) => {
 	return {
-		id: _extractId(person.id),
+		id: _extractId(person),
 		birth_year: person.birth_year,
 		eye_color: person.eye_color,
 		films: person.films,
