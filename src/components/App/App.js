@@ -1,6 +1,7 @@
 import logo from '../../logo.svg'
 import './App.css'
 import PersonsList from '../PersonsList/PersonsList'
+import UseEffectsHook from '../../tests/Hooks/UseEffectsHook/UseEffectsHook'
 
 const App = () => {
     return (
@@ -18,6 +19,7 @@ const App = () => {
               </a>
           </header>
           <body>
+            <UseEffectsHook/>
 			<PersonsList/>
           </body>
           <footer className="app-footer">
