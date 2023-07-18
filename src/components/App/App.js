@@ -19,8 +19,8 @@ const App = () => {
               </a>
           </header>
           <body>
-            <UseEffectsHook/>
 			<PersonsList/>
+			<UseEffectsHook/>
           </body>
           <footer className="app-footer">
           </footer>
