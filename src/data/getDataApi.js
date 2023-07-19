@@ -18,7 +18,6 @@ const getPerson = async (id) => {
 	return _trasformPersonData(person)
 }
 
-
 export {
 	getDataApiFromServer,
     getAllPersons,

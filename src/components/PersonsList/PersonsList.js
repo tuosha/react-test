@@ -1,27 +1,23 @@
-import { useEffect, useState } from 'react'
 import { getAllPersons } from '../../data/getDataApi'
-import Spinner from '../Spinner/Spinner'
+import {
+	withData,
+	withDataAndSpinner,
+	withSpinner,
+} from '../Helpers/HOCHelpers'
+import ItemsList from '../ItemsList/ItemsList'
+import Spinner from '../Spinner/Spinner/Spinner'
+import NewSpinner from '../Spinner/NewSpinner/NewSpinner'
 
 const PersonsList = () => {
-	const [persons, setPersons] = useState([])
-	const [isLoaded, setLoaded] = useState(false)
-	useEffect(() => {
-		getAllPersons().then(res => {
-			setPersons(res)
-			setLoaded(true)
-		})
-	}, [])
 	return (
-	  !isLoaded ?
-	    <Spinner/>:
-		persons.length && (
-			<ul className={'personal-list'}>
-				{persons.map(person =>
-				  <li key={person.id}>{person.name}</li>
-				)}
-			</ul>
-	  )
+	  <>
+		  <PersonListWithDataAndSpinner />
+		  <PersonListWithDataAndSpinner2 />
+	  </>
 	)
 }
+
+const PersonListWithDataAndSpinner = withData(withSpinner(ItemsList, Spinner),getAllPersons)
+const PersonListWithDataAndSpinner2 = withDataAndSpinner(ItemsList, getAllPersons, NewSpinner)
 
 export default PersonsList
