@@ -3,7 +3,7 @@ import './ItemsList.css'
 const ItemsList = ({data}) => {
 	return (
 	  (data.length) && (
-		<ul className={'personal-list'}>
+		<ul className={'items-list'}>
 			{data.map(item =>
 			  <li key={item.id}>{item.name}</li>
 			)}
