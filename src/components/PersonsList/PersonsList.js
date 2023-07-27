@@ -11,14 +11,12 @@ import NewSpinner from '../Spinner/NewSpinner/NewSpinner'
 const PersonsList = () => {
 	return (
 	  <>
-		  <PersonListWithData />
 		  <PersonListWithDataAndSpinner />
 		  <PersonListWithDataAndSpinner2 />
 	  </>
 	)
 }
 
-const PersonListWithData = withData(ItemsList,getAllPersons)
 const PersonListWithDataAndSpinner = withData(withSpinner(ItemsList, Spinner),getAllPersons)
 const PersonListWithDataAndSpinner2 = withDataAndSpinner(ItemsList, getAllPersons, NewSpinner)
 
