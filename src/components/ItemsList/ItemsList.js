@@ -1,11 +1,12 @@
 import './ItemsList.css'
+import { Item } from '../Item/Item'
 
-const ItemsList = ({data}) => {
+const ItemsList = ( {data} ) => {
 	return (
 	  (data.length) && (
 		<ul className={'items-list'}>
 			{data.map(item =>
-			  <li key={item.id}>{item.name}</li>
+			  <Item item={item} key={item.id}/>
 			)}
 		</ul>
 	  )
