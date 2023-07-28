@@ -1,23 +1,34 @@
 import { getAllPersons } from '../../data/getDataApi'
-import {
-	withData,
-	// withDataAndSpinner,
-	withSpinner,
-} from '../Helpers/HOCHelpers'
 import ItemsList from '../ItemsList/ItemsList'
 import Spinner from '../Spinner/Spinner/Spinner'
-// import NewSpinner from '../Spinner/NewSpinner/NewSpinner'
+import { compose } from '../../utils/utils'
+import {
+	withData,
+	withListOptions,
+	withDataAndSpinner,
+	withSpinner,
+} from '../Helpers/HOCHelpers'
 
 const PersonsList = () => {
 	return (
 	  <>
 		  <PersonListWithDataAndSpinner />
-		  {/*<PersonListWithDataAndSpinner2 />*/}
+		  <PersonListWithDataAndSpinner2 />
 	  </>
 	)
 }
 
-const PersonListWithDataAndSpinner = withData(withSpinner(ItemsList, Spinner),getAllPersons)
-// const PersonListWithDataAndSpinner2 = withDataAndSpinner(ItemsList, getAllPersons, NewSpinner)
+const PersonListWithDataAndSpinner =
+	compose(
+		withData(getAllPersons),
+		withSpinner(Spinner),
+		withListOptions
+	)(ItemsList)
+
+const PersonListWithDataAndSpinner2 =
+	compose(
+		withDataAndSpinner(getAllPersons, Spinner),
+		withListOptions({deleteBtn: true})
+	)(ItemsList)
 
 export default PersonsList
