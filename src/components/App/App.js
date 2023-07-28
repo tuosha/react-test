@@ -2,6 +2,8 @@ import logo from '../../logo.svg'
 import './App.css'
 import PersonsList from '../PersonsList/PersonsList'
 import UseEffectsHook from '../../tests/Hooks/UseEffectsHook/UseEffectsHook'
+import TwoWayBinding
+	from '../../tests/Hooks/CustomHooks/TwoWayBinding/TwoWayBinding'
 
 const App = () => {
     return (
@@ -21,6 +23,7 @@ const App = () => {
           <body>
 			<PersonsList/>
 			<UseEffectsHook/>
+			<TwoWayBinding/>
           </body>
           <footer className="app-footer">
           </footer>
