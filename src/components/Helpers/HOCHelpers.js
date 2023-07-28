@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 
-const withData = (View, getData) => (props) => {
+const withData = (getData) => (View) => (props) => {
 	const [data, setData] = useState([])
 	useEffect(() => {
 		getData().then(res => {
@@ -8,23 +8,23 @@ const withData = (View, getData) => (props) => {
 		})
 	}, [])
 	return (
-		<View {...props} data={data}/>
+	   <View {...props} data={data}/>
 	)
 }
 
-const withSpinner = (View, Spinner) => (props) => {
+const withSpinner = (Spinner) => (View) => (props) => {
 	const [loaded, setLoaded] = useState(false)
 	useEffect(() => {
-		if (props.data.length && !loaded) setLoaded(true)
-	},[props.data.length, loaded])
+		if (props.data.length) setLoaded(true)
+	},[props.data.length])
 	return (
-	  (!loaded) ?
-		<Spinner/>:
+	  (!props.data.length && !loaded) ?
+		<Spinner/> :
 		<View {...props}/>
 	)
 }
 
-const withDataAndSpinner = (View, getData, Spinner) => (props) => {
+const withDataAndSpinner = (getData, Spinner) => (View) => (props) => {
 	const [data, setData] = useState([])
 	const [loaded, setLoaded] = useState(false)
 	useEffect(() => {
@@ -40,8 +40,15 @@ const withDataAndSpinner = (View, getData, Spinner) => (props) => {
 	)
 }
 
+const withListOptions = (options) => (View) => (props) => {
+	return (
+	  <View {...props} options={options}/>
+	)
+}
+
 export {
 	withData,
     withSpinner,
-	withDataAndSpinner
+	withDataAndSpinner,
+	withListOptions
 }

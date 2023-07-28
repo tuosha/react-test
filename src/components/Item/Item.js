@@ -1,10 +1,12 @@
-export const Item = ( {item, handleDelete} ) => {
+export const Item = ( {item, handleDelete, options}) => {
+	const {deleteBtn} = options
 	const records =
 	<li key={item.id}>
 		{Object.entries(item).map(([key, val]) =>
 		  <span key={key[0]}>{val} </span>
 		)}
-		<button onClick={() => handleDelete(item.id)}>Delete</button>
+		{(deleteBtn) ?  
+		  <button onClick={() => handleDelete(item.id)}>Delete</button>: ""}
 	</li>
 	return (
 	  records
