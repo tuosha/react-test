@@ -22,7 +22,7 @@ const PersonListWithDataAndSpinner =
 	compose(
 		withData(getAllPersons),
 		withSpinner(Spinner),
-		withListOptions
+		withListOptions()
 	)(ItemsList)
 
 const PersonListWithDataAndSpinner2 =
