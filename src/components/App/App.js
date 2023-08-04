@@ -1,32 +1,24 @@
-import logo from '../../logo.svg'
-import './App.css'
 import PersonsList from '../PersonsList/PersonsList'
 import UseEffectsHook from '../../tests/Hooks/UseEffectsHook/UseEffectsHook'
-import TwoWayBinding
-	from '../../tests/Hooks/CustomHooks/TwoWayBinding/TwoWayBinding'
+import TwoWayBinding from '../../tests/Hooks/CustomHooks/TwoWayBinding/TwoWayBinding'
+import HeaderNavigation from '../HeaderNagation/HeaderNagation'
+import PlanetsList from '../PlanetsList/PlanetsList'
+import './App.css'
 
 const App = () => {
     return (
-        <>
-          <header className="app-header">
-              <img src={logo} className="app-header__logo" alt="logo"/>
-              <p>
-                  Edit <code>src/App.js</code> and save to reload.
-              </p>
-              <a
-                className="app-link"
-                href="https://reactjs.org"
-              >
-                  Start
-              </a>
-          </header>
-          <body>
+	  <>
+		<body className="app-body">
+			<header className="app-header">
+				<HeaderNavigation/>
+			</header>
 			<PersonsList/>
+			<PlanetsList/>
 			<UseEffectsHook/>
 			<TwoWayBinding/>
-          </body>
-          <footer className="app-footer">
-          </footer>
+		</body>
+		<footer className="app-footer">
+		</footer>
       </>
     )
 }

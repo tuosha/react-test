@@ -3,7 +3,7 @@ const _extractId = (item) => {
 	return item.url.match(idRegExp)[1];
 };
 
-const _trasformPersonData = (person) => {
+const _transformPersonData = (person) => {
 	return {
 		id: _extractId(person),
 		name: person.name,
@@ -21,8 +21,25 @@ const _trasformPersonData = (person) => {
 		// vehicles: person.vehicles
 	}
 }
+const _transformPlanetData = (planet) => {
+	return {
+		id: _extractId(planet),
+		name: planet.name,
+		rotation_period: planet.rotation_period,
+		orbital_period: planet.orbital_period,
+		diameter: planet.diameter,
+		climate: planet.climate,
+		gravity: planet.gravity,
+		terrain: planet.terrain,
+		surface_water: planet.surface_water,
+		population: planet.population,
+		residents: planet.residents,
+		films: planet.films,
+	}
+}
 
 export {
-	_trasformPersonData
+	_transformPersonData,
+	_transformPlanetData
 }
 
