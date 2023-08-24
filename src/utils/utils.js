@@ -5,15 +5,26 @@ const compose = (...fns) =>
 		(...args) => nextFn(prevFn(...args)), value => value
 );
 
+const checkValidUrl = urlString => {
+	const urlPattern = new RegExp('^(https?:\\/\\/)?'+
+	  '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|'+
+	  '((\\d{1,3}\\.){3}\\d{1,3}))'+
+	  '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*'+
+	  '(\\?[;&a-z\\d%_.~+=-]*)?'+
+	  '(\\#[-a-z\\d_]*)?$','i');
+	return !!urlPattern.test(urlString);
+}
+
+const checkNonEmptyObject = obj => (typeof obj  === 'object' && obj.length)
+
 const checkInnerRecords = (records) => {
-	const checkNonEmptyObject = (typeof records === 'object' && records.length)
-	return checkNonEmptyObject ? (
+	return checkNonEmptyObject(records) ? (
 		<ul>{records.map(el =>
-		  <li key={nanoid()}>{
-			  checkNonEmptyObject ? checkInnerRecords(el) : el}
-		  </li>)}
+			<li key={nanoid()}>
+				{checkNonEmptyObject(records) ? checkInnerRecords(el) : el}
+			</li>)}
 		</ul>) :
-	  records
+	  checkValidUrl(records) ? <a href={records}>{records}</a> : records + ' '
 }
 
 export {

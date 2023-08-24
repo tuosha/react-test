@@ -5,23 +5,23 @@ const useModel = (str = null) => {
 	const handler = (e) => setValue(e.target.value)
 	const model = {
 		value,
-		onChange: handler
+		onChange: handler,
 	}
 	return {
 		model,
-		setModel: setValue
+		setModel: setValue,
 	}
 }
 
 const TwoWayBinding = () => {
-	const {model, setModel} = useModel('Tony')
+	const { model, setModel } = useModel('Tony')
 	const reset = () => setModel('')
 	return (
-	  <>
-	    <h2>{model.value}</h2>
-		<input {...model}/>
-		<button onClick={reset}>Reset</button>
-	  </>
+		<>
+			<h2>{model.value}</h2>
+			<input {...model}/>
+			<button onClick={reset}>Reset</button>
+		</>
 	)
 }
 

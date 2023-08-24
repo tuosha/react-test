@@ -1,25 +1,28 @@
-import PersonsList from '../PersonsList/PersonsList'
 import UseEffectsHook from '../../tests/Hooks/UseEffectsHook/UseEffectsHook'
 import TwoWayBinding from '../../tests/Hooks/CustomHooks/TwoWayBinding/TwoWayBinding'
 import HeaderNavigation from '../HeaderNagation/HeaderNagation'
-import PlanetsList from '../PlanetsList/PlanetsList'
 import './App.css'
+import { Outlet } from 'react-router-dom'
 
 const App = () => {
-    return (
-	  <>
-		<body className="app-body">
+	return (
+		<>
 			<header className="app-header">
 				<HeaderNavigation/>
 			</header>
-			<PersonsList/>
-			<PlanetsList/>
-			<UseEffectsHook/>
-			<TwoWayBinding/>
-		</body>
-		<footer className="app-footer">
-		</footer>
-      </>
-    )
+			<main>
+			</main>
+			<section>
+				<Outlet/>
+			</section>
+			<section>
+				<UseEffectsHook/>
+				<TwoWayBinding/>
+			</section>
+			<footer className="app-footer">
+				Syntheza 2023
+			</footer>
+		</>
+	)
 }
 export default App

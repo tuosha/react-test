@@ -1,7 +1,12 @@
 import { useEffect, useRef, useState } from 'react'
 import './UseEffectsHook.css'
+import { useCallback } from 'react'
 
 const UseEffectsHook = () => {
+	// use Callback to avoid endless cycle
+	const getResult = useCallback(() => {
+		return 2*3
+	}, [])
 	const maxClicks = 5
 	const alertCLicks = 2
 	const minClicks = 0
@@ -11,6 +16,9 @@ const UseEffectsHook = () => {
 	const msgRef = useRef(null)
 	const handleIncrease = () => count < maxClicks ? setCount(count + 1) : ''
 	const handleDecrease = () => count > minClicks ? setCount(count - 1) : ''
+	useEffect(() => {
+		setCount((count) => count++)
+	},[getResult])
 	useEffect(() => {
 		const alertMsg = `You click: ${count} times, try to stop!`
 		const finalMsg = 'Too much clicks! No more!'

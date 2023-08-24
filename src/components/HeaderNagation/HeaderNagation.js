@@ -3,14 +3,11 @@ import './HeaderNagation.css'
 
 const HeaderNavigation = () => {
 	return (
-	<>
 		<nav className="header-navigation-nav">
-			<ul className="header-navigation__list">
-				<li><Link to={`persons`}>Persons</Link></li>
-				<li><Link to={`planets`}>Planets</Link></li>
-			</ul>
+			<Link to={'/'}>Home</Link>
+			<Link to={`persons`}>Persons</Link>
+			<Link to={`planets`}>Planets</Link>
 		</nav>
-	</>
 	)
 }
 
