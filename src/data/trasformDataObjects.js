@@ -16,9 +16,9 @@ const _transformPersonData = (person) => {
 		// homeworld: person.homeworld,
 		// mass: person.mass,
 		// skin_color: person.skin_color,
-		// species: person.species,
-		// starships: person.starships,
-		// vehicles: person.vehicles
+		species: person.species,
+		starships: person.starships,
+		vehicles: person.vehicles
 	}
 }
 const _transformPlanetData = (planet) => {

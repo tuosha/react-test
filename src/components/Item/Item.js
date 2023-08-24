@@ -1,10 +1,13 @@
+import {nanoid} from 'nanoid'
+import { checkInnerRecords } from '../../utils/utils'
+
 export const Item = ( {item, handleDelete, options}) => {
 	const {deleteBtn} = options
 	const records =
-	<li key={item.id}>
-		{Object.entries(item).map(([key, val]) =>
-		  <span key={key[0]}>{val} </span>
-		)}
+		<li key={item.id}>
+			{Object.entries(item).map(([key, val]) =>
+				<span key={nanoid()}>{checkInnerRecords(val)}</span>
+			)}
 		{(deleteBtn) ?  
 		  <button onClick={() => handleDelete(item.id)}>Delete</button>: ""}
 	</li>
